@@ -1,0 +1,21 @@
+package Attacks;
+
+import ru.ifmo.se.pokemon.*;
+
+public final class FireBlast extends SpecialMove {
+    public FireBlast() {
+        super(Type.FIRE, 110, 85); // мощная огненная атака
+    }
+
+    @Override
+    protected void applyOppEffects(Pokemon p){
+        if (Math.random() <= 0.1) { // 10% шанс ожога
+            Effect.burn(p);
+        }
+    }
+
+    @Override
+    protected String describe() {
+        return "использует Fire Blast";
+    }
+}
